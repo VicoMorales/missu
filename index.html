@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .container{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .heart{
+        --size: 200px;
+        --color: red;
+        transform:rotate(45deg);
+        animation:beat 1s infinite alternate ease-in-out;
+        position: relative;
+        display: grid;
+        color: white;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+    }
+    h1{
+        position: absolute;
+        transform:rotate(-45deg);
+        text-align: center;
+    left: -20%;
+    top: 25%;
+    }
+    .heart,
+    .heart::before,
+    .heart::after{
+        width: var(--size);
+        height: var(--size);
+        background:var(--color);
+    }
+    .heart::before,
+    .heart::after{
+    content:'';
+    display: block;
+    border-radius:50%;
+    }
+    .heart::before{
+    margin-top: calc(var(--size)*-.5);
+    
+    }
+    .heart::after{
+    margin-top: calc(var(--size)* -0.5);
+    margin-left: calc(var(--size)* -0.5);
+    }
+    @keyframes beat{
+        to{
+            transform: rotate(45deg) scale(1.05);
+        }
+        }
+
+
+</style>
+<body>
+    <main class="container">
+        <div class="heart">
+            <h1>
+                TE EXTRAÑO u.u
+            </h1>
+        </div>
+    </main>
+</body>
+</html>
